@@ -1,6 +1,5 @@
 import numpy as np
 Grid = np.loadtxt('prob11.txt',dtype='int')
-print np.shape(Grid)
 it = np.nditer(Grid, flags=['multi_index'])
 num = 4
 
