@@ -7,17 +7,16 @@ def is_prime(n):
 def is_multiple(n,nums):
  return all(n%i == 0 for i in nums)
 
-NumMax = 10
+NumMax = 20
 PrimesList = []
 for i in range(2,NumMax):
  if is_prime(i): PrimesList.append(i)
 
-print PrimesList
 i = NumMax
 while not is_multiple(i,range(1,NumMax+1)):
  i += NumMax
- if is_multiple(i,PrimesList):
-  print i, is_multiple(i,range(1,NumMax)),is_multiple(i,PrimesList)
+# if is_multiple(i,PrimesList):
+#  print i, is_multiple(i,range(1,NumMax)),is_multiple(i,PrimesList)
 
 
 
