@@ -2,7 +2,6 @@ def FindInListofLists(data,search):
  """finds the search in list of lists"""
  #should in general be recursive
  for sublist in data:
-     sublist
      if search in sublist:
          return sublist
 
