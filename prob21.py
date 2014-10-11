@@ -8,11 +8,10 @@ def d(n):
 low, high = 2, 10000  #start at 2 to avoid empty set for proper divisors for 1
 sum_divisors = [d(n) for n in xrange(low,high+1)] #get d(n)  for n
 
-pairs=[]
-for i in range(high-low+1):
- ind = sum_divisors[i] #index to compare to
- if i + low < ind and ind <= high and sum_divisors[ind - low] == i + low:
-  pairs.append([i+low,ind])
+sum = 0 
+for i, j  in enumerate(sum_divisors):
+  if i+low < j and j-low >= 0 and j-low <= len(sum_divisors)-1 and sum_divisors[j-low] == i+low:
+   sum += i+low 
+   sum += j 
 
-
-print np.sum(np.array(pairs))
+print sum
