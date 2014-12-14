@@ -1,23 +1,10 @@
-import itertools
-from collections import deque
+from itertools import product
+from Palindrome import is_palindrome
 
-def is_palindrome(String):
- character_deque = deque()
- #put all chracters in deque then check one by one
- for i in String: character_deque.appendleft(i)
+MAX = 999
+highest = 0
+for i, j in product(range(MAX+1), range(MAX+1)):
+ if is_palindrome(str(i*j)) and i*j > highest:
+  highest = i*j
 
- Equal = True
- while Equal and len(character_deque) > 1:
-  rightcharacter = character_deque.pop()
-  leftcharacter  = character_deque.popleft()
-  if rightcharacter != leftcharacter: Equal = False #if any not equal then not a palidrome
- return Equal
-
-NumMax = 999
-Highest = 0
-for i,j in itertools.product(range(NumMax+1),range(NumMax+1)):
- if is_palindrome(str(i*j)) and i*j > Highest:
-  Highest = i*j
-
-
-print Highest
+print highest
