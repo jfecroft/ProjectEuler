@@ -1,23 +1,9 @@
-import math
-def is_prime(n):
-    if n%2 == 0 and n > 2: 
-        return False
-    return all(n%i for i in range(3, int(math.sqrt(n)) + 1, 2))
+def is_multiple(n,numbers):
+    return all(n%number == 0 for number in numbers)
 
-def is_multiple(n,nums):
- return all(n%i == 0 for i in nums)
+MAX_NUMBER = 20
+number = MAX_NUMBER # Start at MAX_NUMBER.
+while not is_multiple(number, range(1, MAX_NUMBER+1)):
+    number += MAX_NUMBER # Check all numbers multiples of MAX_NUMBER.
 
-NumMax = 20
-PrimesList = []
-for i in range(2,NumMax):
- if is_prime(i): PrimesList.append(i)
-
-i = NumMax
-while not is_multiple(i,range(1,NumMax+1)):
- i += NumMax
-# if is_multiple(i,PrimesList):
-#  print i, is_multiple(i,range(1,NumMax)),is_multiple(i,PrimesList)
-
-
-
-print i
+print number
