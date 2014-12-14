@@ -1,7 +1,7 @@
 from collections import deque
 
-def IsPalindrome(string):
-    """Check if string is a palindrome."""
+def is_palindrome(string):
+    """ Return if a string is a palindrome."""
 
     character_deque = deque()
     # Put all chracters in deque.
