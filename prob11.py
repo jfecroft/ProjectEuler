@@ -1,22 +1,21 @@
 import numpy as np
-Grid = np.loadtxt('prob11.txt',dtype='int')
-it = np.nditer(Grid, flags=['multi_index'])
-num = 4
 
-Max = 0
+grid = np.loadtxt('prob11.txt', dtype='int')
+index_iterator = np.nditer(grid, flags=['multi_index'])
+number_adjacent = 4
 
-while not it.finished:
- index = it.multi_index
- SubGrid = Grid[index[0]:index[0]+num,index[1]:index[1]+num]
- if (num,num) == np.shape(SubGrid):
-  up    =  np.prod(SubGrid[:,0])
-  along =  np.prod(SubGrid[0,:])
-  diag1 =  np.prod(np.diag(SubGrid))
-  diag2 =  np.prod(np.diag(SubGrid[::-1]))
-  if up    > Max:Max = up
-  if along > Max:Max = along
-  if diag1 > Max:Max = diag1
-  if diag2 > Max:Max = diag2
- it.iternext()
+maximum = 0
 
-print Max 
+while not index_iterator.finished:
+    index = index_iterator.multi_index
+    sub_grid = grid[index[0]:index[0]+number_adjacent, index[1]:index[1]+number_adjacent]
+    if (number_adjacent, number_adjacent) == np.shape(sub_grid): # To account for corners.
+        up =  np.prod(sub_grid[:,0])
+        along =  np.prod(sub_grid[0,:])
+        diag1 =  np.prod(np.diag(sub_grid))
+        diag2 =  np.prod(np.diag(sub_grid[::-1]))
+        if np.amax((up, along, diag1, diag2)) > maximum:
+            maximum = np.amax((up, along, diag1, diag2))
+    index_iterator.iternext()
+
+print maximum 
