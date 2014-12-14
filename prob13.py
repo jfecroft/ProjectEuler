@@ -1,8 +1,7 @@
-import numpy as np
-import decimal
-filen = 'prob13.txt'
+FILE_NAME = 'prob13.txt'
 num = 0
-for line in open(filen,'r'):
- num += int(line)
+
+for line in open(FILE_NAME, 'r'):
+    num += int(line)
 
 print str(num)[0:10]
