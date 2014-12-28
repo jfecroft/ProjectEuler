@@ -49,6 +49,7 @@ def PrimeFactors(n, PrimesList=None):
 
 
 def PrimesLessThanN(NumMax):
+    """Return primes less than *NumMax*."""
     PrimesList = []
     Primes = [True]*NumMax
     i = 2
