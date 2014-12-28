@@ -5,6 +5,7 @@ from math import sqrt
 
 
 def is_prime(number):
+    """Checks if *number* is prime."""
     if number > 1:
         if number == 2:
             return True
@@ -18,6 +19,7 @@ def is_prime(number):
 
 
 def ProperDivisors(n):
+    """Return the proper divisors of *n*."""
     PF = PrimeFactors(n)
     PD = list(powerset(PF))
     PD = [t for t in PD if t != ()]  # remove the empty set
@@ -29,17 +31,17 @@ def ProperDivisors(n):
 
 
 def PrimeFactors(n, PrimesList=None):
-    """returns the prime factorisation of n"""
+    """returns the prime factorisation of *n*."""
     if PrimesList is None:
         PrimesList = []
     if n == 1:
         return []  # account for empty set for 1
     i = 2
-    while (n % i != 0 and i < n):
+    while n % i != 0 and i < n:
         i += 1
     if i > 1:
         PrimesList.append(i)
-    if (i < n):
+    if i < n:
         return PrimeFactors(n/i, PrimesList)
     else:
         PrimesList.append(1)
