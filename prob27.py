@@ -1,8 +1,14 @@
+"""Solution to project Euler problem 27."""
+
 from PrimeFactorisation import is_prime
 from itertools import product
 
 
 def consecutive_solutions(a, b):
+    """Return the number of consective primes
+    given by n**2 + a*n + b for *a* and *b* starting from 
+    n = 0.
+    """
     n = 0
     while is_prime(n**2 + a*n + b):
         n += 1
