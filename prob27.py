@@ -2,15 +2,9 @@ from PrimeFactorisation import is_prime
 from itertools import product
 
 
-def quadratic_formula(a, b, n):
-    return is_prime(n**2 + a*n + b)
-
-
 def consecutive_solutions(a, b):
-    prime_test = True
     n = 0
-    while prime_test is True:
-        prime_test = quadratic_formula(a, b, n)
+    while is_prime(n**2 + a*n + b):
         n += 1
     return n - 2
 
