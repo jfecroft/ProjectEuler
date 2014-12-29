@@ -6,7 +6,7 @@ def consecutive_solutions(a, b):
     n = 0
     while is_prime(n**2 + a*n + b):
         n += 1
-    return n - 2
+    return n - 2  # -2 accounts for 0 and extra n += 1 in while loop.
 
 
 A_MAX = 1000
