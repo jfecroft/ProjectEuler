@@ -18,39 +18,39 @@ def is_prime(number):
     return False
 
 
-def ProperDivisors(n):
+def get_proper_divisors(n):
     """Return the proper divisors of *n*."""
-    PF = PrimeFactors(n)
-    PD = list(powerset(PF))
-    PD = [t for t in PD if t != ()]  # remove the empty set
-    for i, j in enumerate(PD):
-        PD[i] = np.prod(np.array(j))
-    PD = set(PD)
-    PD.remove(n)
-    return PD
+    prime_factors = PrimeFactors(n)
+    proper_divisors = list(powerset(prime_factors))
+    proper_divisors.remove(())
+    for i, j in enumerate(proper_divisors):
+        proper_divisors[i] = np.prod(np.array(j))
+    proper_divisors = set(proper_divisors)
+    proper_divisors.remove(n)
+    return proper_divisors
 
 
-def PrimeFactors(n, PrimesList=None):
+def PrimeFactors(n, primes_list=None):
     """returns the prime factorisation of *n*."""
-    if PrimesList is None:
-        PrimesList = []
+    if primes_list is None:
+        primes_list = []
     if n == 1:
         return []  # account for empty set for 1
     i = 2
     while n % i != 0 and i < n:
         i += 1
     if i > 1:
-        PrimesList.append(i)
+        primes_list.append(i)
     if i < n:
-        return PrimeFactors(n/i, PrimesList)
+        return PrimeFactors(n/i, primes_list)
     else:
-        PrimesList.append(1)
-        return PrimesList
+        primes_list.append(1)
+        return primes_list
 
 
 def PrimesLessThanN(NumMax):
     """Return primes less than *NumMax*."""
-    PrimesList = []
+    primes_list = []
     Primes = [True]*NumMax
     i = 2
     while i < sqrt(NumMax):
@@ -63,5 +63,5 @@ def PrimesLessThanN(NumMax):
 
     for i in range(2, len(Primes)):
         if Primes[i] is True:
-            PrimesList.append(i)
-    return PrimesList
+            primes_list.append(i)
+    return primes_list
