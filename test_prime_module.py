@@ -8,8 +8,12 @@ class TestSequenceFunctions(unittest.TestCase):
         self.assertTrue(PrimeFactorisation.is_prime(997))
 
     def test_get_proper_divisors(self):
-        self.assertTrue(PrimeFactorisation.get_proper_divisors(77) ==
-                        set((1, 7, 11)))
+        self.assertEqual(PrimeFactorisation.get_proper_divisors(77),
+                         set((1, 7, 11)))
+
+    def test_prime_factorisation(self):
+        self.assertEqual(PrimeFactorisation.PrimeFactors(999),
+                         [3, 3, 3, 37, 1])
 
 
 if __name__ == '__main__':
