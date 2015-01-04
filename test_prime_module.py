@@ -1,21 +1,29 @@
+"""Run to perform unittests for the PrimeFactorisation module."""
 import unittest
 import PrimeFactorisation
 
 
 class TestPrimeFunctions(unittest.TestCase):
+    """
+    Unitesting class for prime number module PrimeFactorisation.
+    """
 
     def test_is_prime(self):
+        """unittest PrimeFactorisation.is_prime()"""
         self.assertTrue(PrimeFactorisation.is_prime(997))
 
     def test_get_proper_divisors(self):
+        """unittest PrimeFactorisation.get_proper_divisors()"""
         self.assertEqual(PrimeFactorisation.get_proper_divisors(77),
                          set((1, 7, 11)))
 
     def test_prime_factorisation(self):
+        """unittest PrimeFactorisation.PrimeFactors()"""
         self.assertEqual(PrimeFactorisation.PrimeFactors(999),
                          [3, 3, 3, 37, 1])
 
     def test_primes_less_than_n(self):
+        """unittest PrimeFactorisation.PrimesLessThanN()"""
         primes_list = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43,
                        47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101,
                        103, 107, 109, 113, 127, 131, 137, 139, 149, 151,
@@ -35,5 +43,7 @@ class TestPrimeFunctions(unittest.TestCase):
                        991, 997]
         self.assertEqual(PrimeFactorisation.PrimesLessThanN(999),
                          primes_list)
+
+
 if __name__ == '__main__':
     unittest.main()
