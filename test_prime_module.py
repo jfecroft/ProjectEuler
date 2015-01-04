@@ -2,7 +2,7 @@ import unittest
 import PrimeFactorisation
 
 
-class TestSequenceFunctions(unittest.TestCase):
+class TestPrimeFunctions(unittest.TestCase):
 
     def test_is_prime(self):
         self.assertTrue(PrimeFactorisation.is_prime(997))
