@@ -1,34 +1,32 @@
 from PrimeFactorisation import PrimeFactors
 import itertools
 import numpy as np
-from math import factorial
-
-def GetCombinations(lst):  
- combs = []
- for i in xrange(1, len(lst)+1):
-     els = [list(x) for x in itertools.combinations(lst, i)]
-     combs.extend(els)
- return combs
-
-def GenTri():
- i = 0
- Tri = 0
- while True:
-  i   += 1
-  Tri += i
-  yield Tri
 
 
-a = GenTri()
+def get_combintions(lst):
+    combs = []
+    for i in xrange(1, len(lst)+1):
+        els = [list(x) for x in itertools.combinations(lst, i)]
+        combs.extend(els)
+    return combs
 
-NumFactors = 0
-while NumFactors < 500:
- TriNum  = a.next()
- Factors = PrimeFactors(TriNum)
- Combs = GetCombinations(Factors)
-# print TriNum, len(Combs), factorial(len(Factors))
- Combs =[np.prod(i) for i in Combs] 
- NumFactors =  len(set(Combs))
-# print TriNum, NumFactors, factorial(len(Factors))
 
-print TriNum
+def generate_triangle_numbers():
+    i = 0
+    tri = 0
+    while True:
+        i += 1
+        tri += i
+        yield tri
+
+
+triangle_number_generator = generate_triangle_numbers()
+number_of_factors = 0
+while number_of_factors < 500:
+    triangle_number = triangle_number_generator.next()
+    Factors = PrimeFactors(triangle_number)
+    combintions = get_combintions(Factors)
+    combintions = [np.prod(i) for i in combintions]
+    number_of_factors = len(set(combintions))
+
+print triangle_number
