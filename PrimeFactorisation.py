@@ -21,7 +21,7 @@ def is_prime(number):
 def get_proper_divisors(n):
     """Return the proper divisors of *n*."""
     prime_factors = PrimeFactors(n)
-    proper_divisors = list(powerset(prime_factors))
+    proper_divisors = powerset(prime_factors)
     proper_divisors.remove(())
     for i, j in enumerate(proper_divisors):
         proper_divisors[i] = np.prod(np.array(j))
