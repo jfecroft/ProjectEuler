@@ -1,4 +1,4 @@
-"""Run to perform unittests for the PrimeFactorisation module."""
+"""unittests for the SetOperation module."""
 import unittest
 import SetOperations
 
