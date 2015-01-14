@@ -6,4 +6,5 @@ def powerset(iterable):
     return the powerset of *iterable*
     """
     xs = list(iterable)
-    return chain.from_iterable(combinations(xs, n) for n in range(len(xs) + 1))
+    return list(chain.from_iterable(combinations(xs, n) for
+                n in range(len(xs) + 1)))
