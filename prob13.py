@@ -1,7 +1,7 @@
 FILE_NAME = 'prob13.txt'
-num = 0
+number = 0
 
 for line in open(FILE_NAME, 'r'):
-    num += int(line)
+    number += int(line)
 
-print str(num)[0:10]
+print str(number)[0:10]
