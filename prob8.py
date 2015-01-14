@@ -7,8 +7,8 @@ integers = map(int, list(number_string))
 integers = np.array(integers)
 
 adjacent_digits = 13
- 
-max_ = 0 
+
+max_ = 0
 for start_index in xrange(len(integers)-adjacent_digits+1):
     product = np.prod(integers[start_index:start_index+adjacent_digits])
     if product > max_:
