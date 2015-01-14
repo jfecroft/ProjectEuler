@@ -1,3 +1,6 @@
+"""
+solution to project euler 13.
+"""
 FILE_NAME = 'prob13.txt'
 number = 0
 
