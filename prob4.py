@@ -1,6 +1,6 @@
 """Solves project euler problem 4."""
 from itertools import product
-from Palindrome import is_palindrome
+from palindrome import is_palindrome
 
 MAX = 999
 highest = 0

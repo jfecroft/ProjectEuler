@@ -1,5 +1,5 @@
 from numpy import binary_repr
-from Palindrome import is_palindrome
+from palindrome import is_palindrome
 
 MAX_NUMBER = 1000000
 sum_ = 0
