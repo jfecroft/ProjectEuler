@@ -1,6 +1,6 @@
 import numpy as np
 
-from SetOperations import powerset
+from set_operations import powerset
 from math import sqrt
 
 

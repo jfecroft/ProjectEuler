@@ -1,6 +1,6 @@
 """unittests for the SetOperation module."""
 import unittest
-import SetOperations
+import set_operations
 
 
 class TestPrimeFunctions(unittest.TestCase):
@@ -22,7 +22,7 @@ class TestPrimeFunctions(unittest.TestCase):
                         ('y', 'z'),
                         ('x', 'y', 'z')]
 
-        self.assertEqual(SetOperations.powerset(['x', 'y', 'z']), xyz_powerset)
+        self.assertEqual(set_operations.powerset(['x', 'y', 'z']), xyz_powerset)
 
 
 if __name__ == '__main__':
