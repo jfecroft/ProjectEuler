@@ -22,7 +22,8 @@ class TestPrimeFunctions(unittest.TestCase):
                         ('y', 'z'),
                         ('x', 'y', 'z')]
 
-        self.assertEqual(set_operations.powerset(['x', 'y', 'z']), xyz_powerset)
+        self.assertEqual(set_operations.powerset(['x', 'y', 'z']),
+                         xyz_powerset)
 
 
 if __name__ == '__main__':
