@@ -11,7 +11,7 @@ for number in xrange(MAX_NUMBER+1):
         palindromes.append(number)
 
 # If palindrome in base10 see if also palindrome in base2.
-for number in  palindromes:
+for number in palindromes:
     if is_palindrome(binary_repr(number)):
         sum_ += number
 
