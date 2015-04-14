@@ -1,23 +1,28 @@
+"""
+solve problem 11
+"""
 import numpy as np
 
-grid = np.loadtxt('prob11.txt', dtype='int')
-index_iterator = np.nditer(grid, flags=['multi_index'])
-number_adjacent = 4
+# pylint: disable=E1103
 
-maximum = 0
+GRID = np.loadtxt('prob11.txt', dtype='int')
+INDEX_ITERATOR = np.nditer(GRID, flags=['multi_index'])
+NUMBER_ADJACENT = 4
 
-while not index_iterator.finished:
-    index = index_iterator.multi_index
-    sub_grid = grid[index[0]:index[0]+number_adjacent,
-                    index[1]:index[1]+number_adjacent]
+MAXIMUM = 0
+
+while not INDEX_ITERATOR.finished:
+    INDEX = INDEX_ITERATOR.multi_index
+    SUB_GRID = GRID[INDEX[0]:INDEX[0]+NUMBER_ADJACENT,
+                    INDEX[1]:INDEX[1]+NUMBER_ADJACENT]
     # To account for corners.
-    if (number_adjacent, number_adjacent) == np.shape(sub_grid):
-        up = np.prod(sub_grid[:, 0])
-        along = np.prod(sub_grid[0, :])
-        diag1 = np.prod(np.diag(sub_grid))
-        diag2 = np.prod(np.diag(sub_grid[::-1]))
-        if np.amax((up, along, diag1, diag2)) > maximum:
-            maximum = np.amax((up, along, diag1, diag2))
-    index_iterator.iternext()
+    if (NUMBER_ADJACENT, NUMBER_ADJACENT) == np.shape(SUB_GRID):
+        UP = np.prod(SUB_GRID[:, 0])
+        ALONG = np.prod(SUB_GRID[0, :])
+        DIAG1 = np.prod(np.diag(SUB_GRID))
+        DIAG2 = np.prod(np.diag(SUB_GRID[::-1]))
+        if np.amax((UP, ALONG, DIAG1, DIAG2)) > MAXIMUM:
+            MAXIMUM = np.amax((UP, ALONG, DIAG1, DIAG2))
+    INDEX_ITERATOR.iternext()
 
-print maximum
+print MAXIMUM
