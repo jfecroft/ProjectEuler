@@ -1,3 +1,6 @@
+"""
+solve problem 20
+"""
 from math import factorial
-digitstring = str(factorial(100))
-print sum((int(digitstring[i]) for i in range(len(digitstring))))
+DIGITSTRING = str(factorial(100))
+print sum((int(DIGITSTRING[i]) for i in range(len(DIGITSTRING))))
