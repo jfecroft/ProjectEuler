@@ -1,11 +1,13 @@
-"""Solves project euler problem 4."""
+"""
+Solves project euler problem 4.
+"""
 from itertools import product
 from palindrome import is_palindrome
 
 MAX = 999
-highest = 0
+HIGHEST = 0
 for num1, num2 in product(range(MAX+1), range(MAX+1)):
-    if is_palindrome(str(num1*num2)) and num1*num2 > highest:
-        highest = num1*num2
+    if is_palindrome(str(num1*num2)) and num1*num2 > HIGHEST:
+        HIGHEST = num1*num2
 
-print highest
+print HIGHEST
