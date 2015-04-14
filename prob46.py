@@ -1,3 +1,6 @@
+"""
+solve project euler problem 46
+"""
 from prime_factorisation import primes_less_than_n
 from prime_factorisation import is_prime
 
@@ -8,20 +11,18 @@ def goldbachs_other_conjecture(number):
     """
     primes = primes_less_than_n(number)
     for prime in primes:
-        n = 0
-        integer = 0
-        while n <= number:
-            n = prime + 2*integer**2
-            if n == number:
+        num = 0
+        iii = 0
+        while num <= number:
+            num = prime + 2*iii**2
+            if num == number:
                 return True
-            integer += 1
+            iii += 1
     return False
 
-integer = 2
-while (goldbachs_other_conjecture(integer) or
-       is_prime(integer) or
-       integer % 2 == 0
-       ):
-    integer += 1
+INUM = 2
+while (goldbachs_other_conjecture(INUM) or is_prime(INUM) or
+       INUM % 2 == 0):
+    INUM += 1
 
-print integer
+print INUM
