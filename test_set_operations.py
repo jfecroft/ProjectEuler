@@ -1,8 +1,11 @@
-"""unittests for the SetOperation module."""
+"""
+unittests for the set_operation module.
+"""
 import unittest
 import set_operations
 
 
+# pylint: disable=R0903
 class TestPrimeFunctions(unittest.TestCase):
     """
     Unitesting class for set_operations module.

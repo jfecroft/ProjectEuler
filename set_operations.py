@@ -1,3 +1,6 @@
+"""
+set operation methods
+"""
 from itertools import chain, combinations
 
 
