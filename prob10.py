@@ -3,7 +3,7 @@ from math import sqrt
 NumMax = 2000000
 
 
-def PrimesLessThanN(NumMax):
+def primes_less_than_n(NumMax):
     PrimesList = []
     Primes = [True]*NumMax
     i = 2
@@ -21,6 +21,6 @@ def PrimesLessThanN(NumMax):
     return PrimesList
 
 
-PrimesList = PrimesLessThanN(NumMax)
+PrimesList = primes_less_than_n(NumMax)
 PrimesList = np.array(PrimesList)
 print np.sum(PrimesList)

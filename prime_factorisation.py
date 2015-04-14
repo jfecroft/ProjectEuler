@@ -20,7 +20,7 @@ def is_prime(number):
 
 def get_proper_divisors(n):
     """Return the proper divisors of *n*."""
-    proper_divisors = powerset(PrimeFactors(n))
+    proper_divisors = powerset(prime_factors(n))
     proper_divisors.remove(())
     for i, j in enumerate(proper_divisors):
         proper_divisors[i] = np.prod(np.array(j))
@@ -29,7 +29,7 @@ def get_proper_divisors(n):
     return proper_divisors
 
 
-def PrimeFactors(n, primes_list=None):
+def prime_factors(n, primes_list=None):
     """returns the prime factorisation of *n*."""
     if primes_list is None:
         primes_list = []
@@ -41,13 +41,13 @@ def PrimeFactors(n, primes_list=None):
     if i > 1:
         primes_list.append(i)
     if i < n:
-        return PrimeFactors(n/i, primes_list)
+        return prime_factors(n/i, primes_list)
     else:
         primes_list.append(1)
         return primes_list
 
 
-def PrimesLessThanN(NumMax):
+def primes_less_than_n(NumMax):
     """Return primes less than *NumMax*."""
     primes_list = []
     Primes = [True]*NumMax

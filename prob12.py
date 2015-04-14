@@ -1,4 +1,4 @@
-from prime_factorisation import PrimeFactors
+from prime_factorisation import prime_factors
 import itertools
 import numpy as np
 
@@ -24,7 +24,7 @@ triangle_number_generator = generate_triangle_numbers()
 number_of_factors = 0
 while number_of_factors < 500:
     triangle_number = triangle_number_generator.next()
-    Factors = PrimeFactors(triangle_number)
+    Factors = prime_factors(triangle_number)
     combintions = get_combintions(Factors)
     combintions = [np.prod(i) for i in combintions]
     number_of_factors = len(set(combintions))

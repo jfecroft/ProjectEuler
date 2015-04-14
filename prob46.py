@@ -1,4 +1,4 @@
-from prime_factorisation import PrimesLessThanN
+from prime_factorisation import primes_less_than_n
 from prime_factorisation import is_prime
 
 
@@ -6,7 +6,7 @@ def goldbachs_other_conjecture(number):
     """Return if goldbach other conjecture is true
     for *number*
     """
-    primes = PrimesLessThanN(number)
+    primes = primes_less_than_n(number)
     for prime in primes:
         n = 0
         integer = 0
