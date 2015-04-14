@@ -1,4 +1,4 @@
-from PrimeFactorisation import PrimeFactors
+from prime_factorisation import PrimeFactors
 import itertools
 import numpy as np
 

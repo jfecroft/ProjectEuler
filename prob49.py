@@ -2,7 +2,7 @@
 solve project euler problem 49
 """
 
-from PrimeFactorisation import is_prime
+from prime_factorisation import is_prime
 
 CHARACTERS = lambda x: sorted(list(str(x)))
 

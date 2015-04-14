@@ -1,5 +1,5 @@
-from PrimeFactorisation import PrimesLessThanN
-from PrimeFactorisation import is_prime
+from prime_factorisation import PrimesLessThanN
+from prime_factorisation import is_prime
 
 
 def goldbachs_other_conjecture(number):

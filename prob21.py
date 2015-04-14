@@ -1,4 +1,4 @@
-from PrimeFactorisation import get_proper_divisors
+from prime_factorisation import get_proper_divisors
 import numpy as np
 
 

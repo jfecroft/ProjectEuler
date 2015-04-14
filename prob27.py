@@ -1,6 +1,6 @@
 """Solution to project Euler problem 27."""
 
-from PrimeFactorisation import is_prime
+from prime_factorisation import is_prime
 from itertools import product
 
 
