@@ -1,7 +1,7 @@
 """
 solve problem 36
 """
-# pylint: disable-msg=E0611
+# pylint: disable=E0611
 from numpy import binary_repr
 from palindrome import is_palindrome
 
