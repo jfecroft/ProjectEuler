@@ -11,9 +11,9 @@ def multiple_of_three_or_five(num):
     else:
         return False
 
-sum_multiples = 0
+SUM_MULTIPLES = 0
 for i in range(1, UPPER_LIMIT):
     if multiple_of_three_or_five(i):
-        sum_multiples += i
+        SUM_MULTIPLES += i
 
-print sum_multiples
+print SUM_MULTIPLES
