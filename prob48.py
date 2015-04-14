@@ -1,5 +1,8 @@
-sum_ = 0
+"""
+solve problem 48
+"""
+SUM = 0
 for i in xrange(1, 1001):
-    sum_ += i**i
+    SUM += i**i
 
-print str(sum_)[-10:]
+print str(SUM)[-10:]
