@@ -2,9 +2,9 @@
 solution to project euler 13.
 """
 FILE_NAME = 'prob13.txt'
-number = 0
+NUMBER = 0
 
 for line in open(FILE_NAME, 'r'):
-    number += int(line)
+    NUMBER += int(line)
 
-print str(number)[0:10]
+print str(NUMBER)[0:10]
