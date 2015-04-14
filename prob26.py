@@ -1,7 +1,10 @@
+"""
+solve problem 26
+"""
 from operator import itemgetter
 
 
-def recurrence_length(n):
+def recurrence_length(num):
     """
     Return the length of the recurrnce cycle for the decimal expansion of 1/*n*
 
@@ -10,13 +13,13 @@ def recurrence_length(n):
     (Glaisher 1878, Lehmer 1941).
     http://mathworld.wolfram.com/MultiplicativeOrder.html
     """
-    for length in xrange(1, n):
-        if 1 == 10**length % n:
+    for length in xrange(1, num):
+        if 1 == 10**length % num:
             return length
     return 0
 
-maximum_recurrence = max(
+MAXIMUM_RECURRENCE = max(
     ((i, recurrence_length(i)) for i in xrange(1, 1001)),
     key=itemgetter(1)
 )[0]
-print maximum_recurrence
+print MAXIMUM_RECURRENCE
