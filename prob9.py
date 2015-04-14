@@ -1,3 +1,6 @@
+"""
+solve problem 9
+"""
 MAX_NUMBER = 1000
 
 for a in xrange(1, MAX_NUMBER):
