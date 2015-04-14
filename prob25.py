@@ -7,18 +7,18 @@ def fib():
     """
     fibonacci number generator.
     """
-    a, b = 0, 1
+    aaa, bbb = 0, 1
     while True:
-        a, b = b, a+b
-        yield b
+        aaa, bbb = bbb, aaa+bbb
+        yield bbb
 
-number_of_digits = 1000
+NUMBER_OF_DIGITS = 1000
 
-fib_generator = fib()
-fib_number = 0
-term = 1
-while len(str(fib_number)) < number_of_digits:
-    fib_number = fib_generator.next()
-    term += 1
+FIB_GENERATOR = fib()
+FIB_NUMBER = 0
+TERM = 1
+while len(str(FIB_NUMBER)) < NUMBER_OF_DIGITS:
+    FIB_NUMBER = FIB_GENERATOR.next()
+    TERM += 1
 
-print term
+print TERM
