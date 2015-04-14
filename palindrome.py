@@ -1,3 +1,6 @@
+"""
+palindrome methods
+"""
 from collections import deque
 
 
