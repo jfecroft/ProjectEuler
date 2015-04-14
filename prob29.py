@@ -1,13 +1,16 @@
+"""
+solve problem 29
+"""
 import itertools
 
-LowLim = 2
-UpLim = 100
+LOWLIM = 2
+UPLIM = 100
 
-A = range(LowLim, UpLim+1)
-B = range(LowLim, UpLim+1)
+A = range(LOWLIM, UPLIM+1)
+B = range(LOWLIM, UPLIM+1)
 
-DistinctTerms = set()
+DISTINCTTERMS = set()
 for a, b in itertools.product(A, B):
-    DistinctTerms.add(a**b)
+    DISTINCTTERMS.add(a**b)
 
-print len(DistinctTerms)
+print len(DISTINCTTERMS)
