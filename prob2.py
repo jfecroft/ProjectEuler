@@ -1,9 +1,12 @@
-sum = 0
-a, b = 0, 1
+"""
+solve problem 2
+"""
+TOTAL = 0
+NUM1, NUM2 = 0, 1
 UPPER_LIMIT = 4000000
-while b < UPPER_LIMIT:
-    a, b = b, a+b
-    if b % 2 == 0:
-        sum += b
+while NUM2 < UPPER_LIMIT:
+    NUM1, NUM2 = NUM2, NUM1+NUM2
+    if NUM2 % 2 == 0:
+        TOTAL += NUM2
 
-print sum
+print TOTAL
