@@ -34,22 +34,15 @@ def get_proper_divisors(num):
     return proper_divisors
 
 
-def prime_factors(num, primes_list=None):
-    """returns the prime factorisation of *n*."""
-    if primes_list is None:
-        primes_list = []
-    if num == 1:
-        return []  # account for empty set for 1
+def prime_factors(num):
+    """return the prime factorisation of num."""
     i = 2
     while num % i != 0 and i < num:
         i += 1
-    if i > 1:
-        primes_list.append(i)
+    primes = [i]
     if i < num:
-        return prime_factors(num/i, primes_list)
-    else:
-        primes_list.append(1)
-        return primes_list
+        primes.extend(prime_factors(num/i))
+    return primes
 
 
 def primes_less_than_n(num):
