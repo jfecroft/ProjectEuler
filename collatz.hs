@@ -1,6 +1,7 @@
 main :: IO ()
-main = print problem
-problem = collatz(9)
+main = print problem_14
+problem_14 = snd $ maximum ( zip [length $ collatz(i)| i <- [1..1000000]] [1..])
+
 collatz :: Integer -> [Integer]
 collatz 1 = [1]
 collatz n
