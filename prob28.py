@@ -69,12 +69,15 @@ def gen_spiral(num):
     cycle_order = cycle(order)
     operation = cycle_order.next()
     pos = [0, 0]
-    pos_list = [pos]
-    for _ in range(num):
-        pos, change = operation.move(pos)
+    pos_list = []
+    count = 0
+    for i in range(1, num+1):
         pos_list.append(pos)
+        if abs(pos[0]) == abs(pos[1]):
+            count += i
+        pos, change = operation.move(pos)
         if change:
             operation = cycle_order.next()
-    return pos_list
+    return pos_list, count
 
-print gen_spiral(12)
+print gen_spiral(1001**2)[1]
