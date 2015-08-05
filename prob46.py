@@ -20,9 +20,12 @@ def goldbachs_other_conjecture(number):
             iii += 1
     return False
 
-INUM = 2
-while (goldbachs_other_conjecture(INUM) or is_prime(INUM) or
-       INUM % 2 == 0):
-    INUM += 1
+def main():
+    inum = 2
+    while (goldbachs_other_conjecture(inum) or is_prime(inum) or
+           inum % 2 == 0):
+        inum += 1
+    print inum
 
-print INUM
+if __name__ == "__main__":
+    main()
