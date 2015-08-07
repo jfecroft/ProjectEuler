@@ -1,22 +1,16 @@
 """
-palindrome methods
+project euler utils
 """
-from collections import deque
 
 
 def is_palindrome(string):
     """ Return if a string is a palindrome."""
 
-    character_deque = deque()
-    # Put all chracters in deque.
-    for i in string:
-        character_deque.appendleft(i)
-
-    # Check if characters in deque are symmetric.
-    equal = True
-    while equal and len(character_deque) > 1:
-        rightcharacter = character_deque.pop()
-        leftcharacter = character_deque.popleft()
-        if rightcharacter != leftcharacter:
-            equal = False  # Not a palidrome
-    return equal
+    if not isinstance(string, str):
+        string = str(string)
+    if len(string) == 1:
+        return True
+    elif string[0] == string[-1]:
+        return is_palindrome(string[1:-1])
+    else:
+        return False
