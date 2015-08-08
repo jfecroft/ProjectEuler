@@ -6,6 +6,7 @@ import numpy as np
 from set_operations import powerset
 from math import sqrt
 from collections import Counter
+from collatz import memoize
 
 # pylint: disable=E1103
 
@@ -35,6 +36,7 @@ def get_proper_divisors(num):
     return proper_divisors
 
 
+@memoize
 def _prime_factors(num):
     """return the prime factorisation of num"""
     i = 2
