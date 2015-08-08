@@ -1,13 +1,19 @@
+"""
+python solution to problem 15
+"""
 
+from collatz import memoize
 
+@memoize  # takes forever without
 def lattice_paths(coords):
-    count = 1
+    if coords == (0, 0):
+        return 1
+    paths = 0
     if coords[0] != 0:
-        count += 1 + lattice_paths((coords[0] - 1, coords[1]))
+        paths += lattice_paths((coords[0] - 1, coords[1]))
     if coords[1] != 0:
-        count += 1 + lattice_paths((coords[0], coords[1] - 1))
-    print count
-    return count
+        paths += lattice_paths((coords[0], coords[1] - 1))
+    return paths
 
-print lattice_paths((2, 2))
+print lattice_paths((20, 20))
         
