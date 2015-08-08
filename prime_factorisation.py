@@ -5,6 +5,7 @@ prime number methods
 import numpy as np
 from set_operations import powerset
 from math import sqrt
+from collections import Counter
 
 # pylint: disable=E1103
 
@@ -34,15 +35,20 @@ def get_proper_divisors(num):
     return proper_divisors
 
 
-def prime_factors(num):
-    """return the prime factorisation of num."""
+def _prime_factors(num):
+    """return the prime factorisation of num"""
     i = 2
     while num % i != 0 and i < num:
         i += 1
     primes = [i]
     if i < num:
-        primes.extend(prime_factors(num/i))
+        primes.extend(_prime_factors(num/i))
     return primes
+
+
+def prime_factors(num):
+    """return the prime factorisation of num"""
+    return Counter(_prime_factors(num)).most_common()
 
 
 def primes_less_than_n(num):
