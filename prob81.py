@@ -12,6 +12,11 @@ def format_lines(lines):
     """
     return tuple([tuple([int(i) for i in line.split(',')]) for line in lines])
 
+def move_down(matrix):
+    return matrix[0][0] + minimum_route(matrix[1:])
+
+def move_right(matrix):
+    return matrix[0][0] + minimum_route(tuple([i[1:] for i in matrix]))
 
 @memoize
 def minimum_route(matrix):
@@ -23,14 +28,11 @@ def minimum_route(matrix):
         return matrix[0][0]
     else:
         if len(matrix[0]) > 1 and len(matrix) > 1:
-            min_route += matrix[0][0] + min(
-                minimum_route(tuple([i[1:] for i in matrix])),
-                minimum_route(matrix[1:]))
+            min_route += min(move_down(matrix), move_right(matrix))
         elif len(matrix[0]) > 1:
-            min_route += matrix[0][0] + minimum_route(
-                tuple([i[1:] for i in matrix]))
+            min_route += move_right(matrix)
         elif len(matrix) > 1:
-            min_route += matrix[0][0] + minimum_route(matrix[1:])
+            min_route += move_down(matrix)
     return min_route
 
 
