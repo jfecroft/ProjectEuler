@@ -2,7 +2,6 @@
 python problem 81 solution
 """
 from utils import open_file
-from sys import maxint
 from collatz import memoize
 FILEN = 'p081_matrix.txt'
 
@@ -23,15 +22,15 @@ def minimum_route(matrix):
     if len(matrix) == 1 and len(matrix[0]) == 1:
         return matrix[0][0]
     else:
-        left = maxint
-        right = maxint
-        if len(matrix[0]) > 1:
-            # move right
-            left = matrix[0][0] + minimum_route(tuple([i[1:] for i in matrix]))
-        if len(matrix) > 1:
-            # move right
-            right = matrix[0][0] + minimum_route(matrix[1:])
-        min_route = min(left, right)
+        if len(matrix[0]) > 1 and len(matrix) > 1:
+            min_route += matrix[0][0] + min(
+                minimum_route(tuple([i[1:] for i in matrix])),
+                minimum_route(matrix[1:]))
+        elif len(matrix[0]) > 1:
+            min_route += matrix[0][0] + minimum_route(
+                tuple([i[1:] for i in matrix]))
+        elif len(matrix) > 1:
+            min_route += matrix[0][0] + minimum_route(matrix[1:])
     return min_route
 
 
