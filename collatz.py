@@ -24,6 +24,7 @@ def memoize(func):
         return cache[key]
     return wrapper
 
+
 @memoize
 def collatz(num):
     """
@@ -37,6 +38,7 @@ def collatz(num):
     else:
         collatz_list.extend(collatz(3*num+1))
     return collatz_list
+
 
 def find_in_list_of_lists(data, search):
     """
