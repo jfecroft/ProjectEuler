@@ -10,7 +10,6 @@ def memoize(func):
     """
     # Everything here happens when the decorator LOADS and wrapper
     # has access to it.
-    # TODO add argument cache last x calls.
     cache = {}
 
     @wraps(func)
