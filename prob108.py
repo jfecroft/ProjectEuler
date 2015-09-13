@@ -6,8 +6,8 @@ def solution(denom, num):
 
 def num_sols(num):
     total = 0
-    for i in xrange(num+1, num*2+1):
-        total += solution(num, i)
+    for iii in xrange(num+1, num*2+1):
+        total += solution(num, iii)
     return total
 
 
