@@ -1,5 +1,4 @@
 from collatz import memoize
-import cProfile
 
 
 @memoize
@@ -23,5 +22,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
