@@ -17,5 +17,5 @@ while num_sols(i) < 10000:
     print i
 
 # works but slow
-print num_sols(180180) 
-    
+print num_sols(180180)
+
