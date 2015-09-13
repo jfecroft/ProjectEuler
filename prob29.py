@@ -3,14 +3,14 @@ solve problem 29
 """
 import itertools
 
-LOWLIM = 2
-UPLIM = 100
 
-A = range(LOWLIM, UPLIM+1)
-B = range(LOWLIM, UPLIM+1)
+def distinct_terms(arange, brange):
+    """
+    distaict terms for a**b
+    """
+    distinctterms = set()
+    for aaa, bbb in itertools.product(arange, brange):
+        distinctterms.add(aaa**bbb)
+    return distinctterms
 
-DISTINCTTERMS = set()
-for a, b in itertools.product(A, B):
-    DISTINCTTERMS.add(a**b)
-
-print len(DISTINCTTERMS)
+print len(distinct_terms(range(2, 101), range(2, 101)))
