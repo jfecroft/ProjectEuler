@@ -3,7 +3,7 @@ solve problem 36
 """
 # pylint: disable=E0611
 from numpy import binary_repr
-from palindrome import is_palindrome
+from utils import is_palindrome
 
 MAX_NUMBER = 1000000
 SUM = 0
