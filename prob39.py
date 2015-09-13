@@ -16,8 +16,17 @@ def integer_right_triangles(perimeter):
                 count += 1
     return count
 
-MAXIMUM = max(
-    ((i, integer_right_triangles(i)) for i in xrange(1001)),
-    key=itemgetter(1)
-)
-print MAXIMUM[0]
+
+def main():
+    """
+    when run as script
+    """
+    maximum = max(
+        ((i, integer_right_triangles(i)) for i in xrange(1001)),
+        key=itemgetter(1)
+    )
+    print maximum[0]
+
+
+if __name__ == '__main__':
+    main()
