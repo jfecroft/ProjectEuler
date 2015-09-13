@@ -1,8 +1,10 @@
 from prob18 import max_route
-from cProfile import run
 FILEN = "p067_triangle.txt"
 
 def load_file(filen):
+    """
+    load file for prob 18
+    """
     with open(filen) as ofile:
         pyramid = ofile.readlines()
     pyramid = [line.split() for line in pyramid]
