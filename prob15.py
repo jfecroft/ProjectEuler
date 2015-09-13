@@ -16,4 +16,4 @@ def lattice_paths(coords):
     return paths
 
 print lattice_paths((20, 20))
-        
+
