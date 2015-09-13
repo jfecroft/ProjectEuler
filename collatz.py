@@ -1,9 +1,12 @@
+"""
+tools relating to project euler collatz problems
+"""
 from functools import wraps
 
 
 def memoize(func):
     """
-    decortor for cacheing 
+    decortor for cacheing
     """
     # Everything here happens when the decorator LOADS and wrapper
     # has access to it.
@@ -12,7 +15,9 @@ def memoize(func):
 
     @wraps(func)
     def wrapper(*args, **kwargs):
-        # Things here happen each time the final wrapped function gets CALLED
+        """
+        Things here happen each time the final wrapped function gets CALLED
+        """
         key = args + tuple(kwargs.items())
         if key not in cache:
             cache[key] = func(*args, **kwargs)
