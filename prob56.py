@@ -8,6 +8,8 @@ def digit_sum(num):
 
 MAXA = 100
 MAXB = 100
+
+
 def main():
     print max(digit_sum(a**b) for a in range(MAXA+1) for b in range(MAXB+1))
 
