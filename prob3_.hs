@@ -14,3 +14,7 @@ problem_3 = largest_prime_factor num
 
 is_divisor x y = (x `mod` y) == 0
 smallest_divisor n = fromJust (find (is_divisor n) [2..n])
+
+factors' n = x: factors' (n `div` x)
+  where
+    x = smallest_divisor n
