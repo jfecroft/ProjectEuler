@@ -7,7 +7,7 @@ factors n = [x | x <- [2..n], n `mod` x == 0]
 smallest_divisor n = head (factors n)
 
 prime_factors n
-  |  n `div` x ==1 = x:[]
+  | n `div` x ==1 = x:[]
   | otherwise = x: prime_factors (n `div` x)
   where
     x = smallest_divisor n
