@@ -1,16 +1,21 @@
+import Data.List
+import Data.Maybe
+
 main :: IO ()
 main = print problem_3
-problem_3 :: Integer
+num = 13195
 
-primes :: [Integer]
-primes = 2 : filter ((==1) . length . primeFactors) [3,5..]
+factors n = [x | x <- [2..n], n `mod` x == 0]
 
-primeFactors :: Integer -> [Integer]
-primeFactors n = factor n primes
+is_prime n = if factors n == [1,n] then True else False
+smallest_divisor n = head (factors n)
+
+largest_prime_factor n = maximum [x | x <- (factors n), is_prime x]
+problem_3 = largest_prime_factor num
+
+
+prime_factors n
+  |  n `div` x ==1 = x:[]
+  | otherwise = x: prime_factors (n `div` x)
   where
-    factor n (p:ps) 
-        | p*p > n        = [n]
-        | n `mod` p == 0 = p : factor (n `div` p) (p:ps)
-        | otherwise      = factor n ps
-
-problem_3 = last (primeFactors 317584931803)
+    x = smallest_divisor n
